@@ -24,21 +24,12 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idusuario", unique = true, nullable = false, length = 10)
 	private int idUsuario;
-
-	@Column(length = 45)
-	private String nombre;
-
-	@Column(length = 45)
+	private String nombres;
+	private String apellidos;
 	private String login;
-
-	@Column(length = 45)
-	private String clave;
-
-	@Column(length = 45)
+	private String password;
 	private String correo;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "usuario")
-	private List<Boleta> boletas;
+	
 
 }

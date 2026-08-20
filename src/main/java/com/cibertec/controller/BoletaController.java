@@ -59,7 +59,7 @@ public class BoletaController {
 
 	@GetMapping("/listaProducto")
 	public ResponseEntity<?> listaProducto(
-			@RequestParam(defaultValue = "0", required = false) int page,
+			@RequestParam(name = "page", defaultValue = "0", required = false) int page,
 			@RequestParam(name = "size", defaultValue = "5", required = false) int size) {
 		Pageable paginacion = PageRequest.of(page, size);
 		List<Producto> lista = productoService.listaproducto("%", paginacion);
